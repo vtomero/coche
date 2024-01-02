@@ -1,4 +1,4 @@
-#Source: Electrocredible.com, Language: MicroPython.
+
 from machine import Pin,UART, PWM
 from time import sleep
 from coche import Coche
@@ -9,8 +9,8 @@ coche = Coche(1,2,27,26,0,28)
 
 while True:
     
-    if uart.any(): #Returns 0 if there are no characters available
-        data = uart.read() #returns a bytes object containing the bytes read in
+    if uart.any(): #Devulve cero si no hay nada que transmitir
+        data = uart.read() #devuelve el objeto leido
         if data== b'F\r\n':                      
             led.high() 
             print("Coche Adelante")
